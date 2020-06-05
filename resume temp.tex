@@ -1,0 +1,143 @@
+\documentclass[letterpaper, 10pt]{resume}
+\usepackage[hidelinks]{hyperref}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgbonum}
+\usepackage{mathptmx}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{titlesec}
+
+\usepackage[most]{tcolorbox}
+%https://www.overleaf.com/latex/examples/drawing-coloured-boxes-using-tcolorbox/pvknncpjyfbp
+\usepackage{marvosym} 
+\usepackage{ifsym}
+
+\usepackage[hmargin=1.25cm, vmargin=0.0cm]{geometry} 
+%https://towardsdatascience.com/create-your-professional-educational-resume-using-latex-7bc371f201e3
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{blue(ryb)}{rgb}{0.01, 0.28, 1.0}
+\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\colorlet{boxback}{blue!5!white}
+
+%\color{blue-violet}
+%\name{Maxwell Ding}
+%\address{1348 Thorpe LN \\ San Marcos, TX 78666}
+%\address{+1 (858)663-2038 \\ maxwellding1998@gmail.com}
+
+\renewenvironment{rSection}[1]{
+\sectionskip
+\textcolor{blue-violet}{\MakeUppercase{#1}}
+\sectionlineskip
+\hrule
+\begin{list}{}{
+	\setlength{\leftmargin}{1.5em}
+}
+	\item[]
+}{
+\end{list}
+}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------------------
+% TITLE 
+%----------------------------------------------------------------------------------------------------
+\begin{center}
+{\Huge Maxwell Ding} \\ 
+{\color{blue-violet} \large University Graduate} \\ {\color{white} a} \\ {\color{white} a} %buffer to leave space under name
+\end{center}
+
+
+\begin{multicols}{2} % begin splitting document into two columns
+
+\begin{rSection}{About Me}
+\color{black}
+\item About Me
+\end{rSection}
+
+\begin{rSection}{Projects}
+\color{black}
+\item Projects
+\end{rSection}
+
+\begin{rSection}{Experience}
+\color{black}
+\item Experience
+\end{rSection}
+
+\begin{rSection}{Skills}
+\begin{tabular}{rl}
+Languages
+& \textsc{Java}, \textsc{Python}, \textsc{C++}, \textsc{C\#}, \\ 
+& \textsc{C}, \textsc{JavaScript}, \textsc{HTML/CSS} \\
+Tools
+& \textsc{BOOP} \\
+Software
+& \textsc{BOOP} \\
+
+\end{tabular}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------------------
+% CONTACT INFO
+%----------------------------------------------------------------------------------------------------
+\begin{tcolorbox}[enhanced, attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=boxback, colframe=blue!75!black, colbacktitle=red!80!black,
+  title=Contact Info,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+
+ \begin{tabular}{c|p{7cm}}
+	\raisebox{-1pt}{\textifsymbol{18}} & 1348 Thorpe LN \#624 \\
+	 & San Marcos, TX 78666 \\ % Address
+	{\Mobilefone} & (858) 663-2038 \\ % Phone number
+	{\Letter} & \href{mailto:mbding98@gmail.com}{mbding98@gmail.com}
+\end{tabular}
+\end{tcolorbox}
+
+%----------------------------------------------------------------------------------------------------
+% AWARDS AND ACHIEVEMENTS
+%----------------------------------------------------------------------------------------------------
+\begin{rSection}{Achievements}
+\color{black}
+	
+	\begin{flushleft}
+	{\bf Dean's List Award} \\
+	{\raggedleft 2017, 2018, 2020 \\ }
+	\end{flushleft}
+	
+	\begin{flushleft}
+	{\bf VRDG Hackathon} \hfill April 2019 \\
+	{\raggedleft \em 1st Place \\}
+	\end{flushleft}
+	
+	\begin{flushleft}
+	{\bf EXE Hackathon} \hfill May 2019 \\
+	{\raggedleft \em 3rd Place\\}
+	\end{flushleft}
+	
+\end{rSection}
+
+%----------------------------------------------------------------------------------------------------
+% DEGREE INFORMATION 
+%----------------------------------------------------------------------------------------------------
+\begin{rSection}{Education}
+\color{black}
+
+	\begin{flushleft}
+	{{\bf Bachelor of Science} \hfill May 2020 } \\
+	\end{flushleft}
+	{\raggedleft GPA: 3.4 \\ Computer Science \\ {\em Texas State University} \\}
+	
+\end{rSection}
+
+
+\end{multicols}
+\end{document}

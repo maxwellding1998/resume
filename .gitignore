@@ -1,4 +1,7 @@
 res.cls
 res-old.cls
 resume.cls
-
+resume temp.log
+resume temp.synctex.gz
+RESUME.log
+RESUME.synctex.gz
