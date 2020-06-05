@@ -17,8 +17,9 @@
 \usepackage[hmargin=1.25cm, vmargin=0.0cm]{geometry} 
 %https://towardsdatascience.com/create-your-professional-educational-resume-using-latex-7bc371f201e3
 
-%\usepackage{fancyhdr}
-%\pagestyle{fancy}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
 
 %\renewcommand{\familydefault}{\sfdefault}
 
@@ -31,6 +32,12 @@
 %\address{1348 Thorpe LN \\ San Marcos, TX 78666}
 %\address{+1 (858)663-2038 \\ maxwellding1998@gmail.com}
 
+% Format of the section titles
+%\titleformat{\rSection}{\color{blue-violet} \scshape\Large\raggedright}{}{0em}{}[\color{black}\titlerule]
+%\titlespacing{\section}{0pt}{0pt}{3pt} % Spacing around titles
+
+\renewcommand{\headrulewidth}{0pt} % Get rid of the default rule in the header
+
 \renewenvironment{rSection}[1]{
 \sectionskip
 \textcolor{blue-violet}{\MakeUppercase{#1}}
@@ -42,6 +49,14 @@
 	\item[]
 }{
 \end{list}
+}
+
+\newlength\mystoreparindent
+\newenvironment{myparindent}[1]{%
+\setlength{\mystoreparindent}{\the\parindent}
+\setlength{\parindent}{#1}
+}{%
+\setlength{\parindent}{\mystoreparindent}
 }
 
 
@@ -70,7 +85,16 @@
 
 \begin{rSection}{Experience}
 \color{black}
-\item Experience
+\begin{rSubsection}{Reversible Alphabet Pvt. Ltd., India}{Jun 2017 - Dec 2018}{Data Scientist}{}
+ \item Created classification models for e-commerce websites using neural networks.
+ \item Achieved exposure towards classification optimaization techniques for further specialization.
+ \item Worked under an experenced Data Scientist and got deep insights related to optimization algorithms.
+\end{rSubsection}
+\begin{rSubsection}{Irreversible Alphabet Pvt. Ltd., India}{Jun 2016 - Dec 2016}{Data Scientist}{}
+ \item Created classification models for e-commerce websites using neural networks.
+ \item Achieved exposure towards classification optimaization techniques for further specialization.
+ \item Worked under an experenced Data Scientist and got deep insights related to optimization algorithms.
+\end{rSubsection}
 \end{rSection}
 
 \begin{rSection}{Skills}
@@ -105,7 +129,7 @@ Software
 %----------------------------------------------------------------------------------------------------
 % AWARDS AND ACHIEVEMENTS
 %----------------------------------------------------------------------------------------------------
-\begin{rSection}{Achievements}
+\begin{rSection}{\bf Achievements}
 \color{black}
 	
 	\begin{flushleft}
